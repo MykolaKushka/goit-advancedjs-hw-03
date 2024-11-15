@@ -15,6 +15,6 @@ export async function fetchImages(query) {
     });
     return response.data.hits;
   } catch (error) {
-    throw new Error('Помилка завантаження зображень');
+    throw new Error('Error during loading images');
   }
 }

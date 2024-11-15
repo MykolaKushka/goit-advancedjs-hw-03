@@ -12,8 +12,8 @@ form.addEventListener('submit', async event => {
 
   if (!query) {
     iziToast.warning({
-      title: 'Попередження',
-      message: 'Введіть ключове слово для пошуку',
+      title: 'Warning',
+      message: 'Enter keyword for searching',
     });
     return;
   }
@@ -27,8 +27,9 @@ form.addEventListener('submit', async event => {
 
     if (images.length === 0) {
       iziToast.info({
-        title: 'Результати відсутні',
-        message: 'На жаль, нічого не знайдено.',
+        title: 'No results',
+        message:
+          'Sorry, there are no images matching your search query. Please, try again!',
       });
       return;
     }
@@ -36,6 +37,6 @@ form.addEventListener('submit', async event => {
     renderGallery(images);
   } catch (error) {
     loader.style.display = 'none';
-    iziToast.error({ title: 'Помилка', message: error.message });
+    iziToast.error({ title: 'Error', message: error.message });
   }
 });
